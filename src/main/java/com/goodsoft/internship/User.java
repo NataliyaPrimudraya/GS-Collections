@@ -2,7 +2,7 @@ package com.goodsoft.internship;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User> {
     private int id;
     private String name;
     public User(int id, String name){
@@ -31,5 +31,9 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+    @Override
+    public int compareTo(User user) {
+        return name.compareTo(user.name);
     }
 }

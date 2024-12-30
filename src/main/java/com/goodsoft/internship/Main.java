@@ -105,7 +105,22 @@ public class Main {
         for (Map.Entry<User, String> entry : userMap.entrySet())
             System.out.print("("+entry.getKey()+": "+entry.getValue()+"); ");
 
+        //===================================================
 
+        System.out.println("\nЗадание 4");
+        TreeSet<String> strSorted = new TreeSet<>();
+        strSorted.add("Н");
+        strSorted.add("А");
+        strSorted.add("П");
+        System.out.println("Отсортированное множество строк:");
+        strSorted.forEach(s->System.out.print(s + "; "));
+
+        TreeSet<User> usersSorted = new TreeSet<>();
+        usersSorted.add(new User(1,"Н"));
+        usersSorted.add(new User(2,"А"));
+        usersSorted.add(new User(3,"П"));
+        System.out.println("\nОтсортированное мн-во пользовательских классов:");
+        usersSorted.forEach(u->System.out.print(u + "; "));
 
     }
 }
