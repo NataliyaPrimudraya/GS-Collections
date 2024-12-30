@@ -1,8 +1,6 @@
 package com.goodsoft.internship;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -73,6 +71,41 @@ public class Main {
         strArray.forEach(s->System.out.print(s + "; "));
         /*Размер strArray уменьшается на единицу, цикл
          не доходит до последнего элемента*/
+
+        //===================================================
+
+        System.out.println("\nЗадание 3");
+        System.out.println("Работа с словарём HashMap<String, String>");
+
+        HashMap<String, String> strMap = new HashMap<>();
+        for (int i=1; i<4; i++)
+            strMap.put("Ключ " + i, "Строка " + i);
+
+        System.out.println("Вывод с применением foreach:");
+        strMap.forEach((k,v)->System.out.print("("+k+": "+v+"); "));
+
+        strMap.put("Ключ 3", "new");
+
+        System.out.println("\nВывод с применением for, аналогичного foreach:");
+        for (Map.Entry<String, String> entry : strMap.entrySet())
+            System.out.print("("+entry.getKey()+": "+entry.getValue()+"); ");
+
+
+        System.out.println("\nРабота с словарём HashMap<User, String>");
+        HashMap<User, String> userMap = new HashMap<>();
+        for (int i=1; i<4; i++)
+            userMap.put(new User(i, "Ключ " + i), "Строка " + i);
+
+        System.out.println("Вывод с применением foreach:");
+        userMap.forEach((k,v)->System.out.print("("+k+": "+v+"); "));
+
+        userMap.put(new User(3, "Ключ 3"), "new");
+
+        System.out.println("\nВывод с применением for, аналогичного foreach:");
+        for (Map.Entry<User, String> entry : userMap.entrySet())
+            System.out.print("("+entry.getKey()+": "+entry.getValue()+"); ");
+
+
 
     }
 }
