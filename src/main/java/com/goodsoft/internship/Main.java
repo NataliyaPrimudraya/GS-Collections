@@ -122,5 +122,23 @@ public class Main {
         System.out.println("\nОтсортированное мн-во пользовательских классов:");
         usersSorted.forEach(u->System.out.print(u + "; "));
 
+        //===================================================
+
+        System.out.println("\nЗадание 5");
+
+        TreeMap<String, String> strSortedMap = new TreeMap<>();
+        strSortedMap.put("Н", "П");
+        strSortedMap.put("А", "Ю");
+        strSortedMap.put("П", "Н");
+        System.out.println("Отсортированный словарь с ключами-строками:");
+        strSortedMap.forEach((k,v)->System.out.print("("+k+": "+v+"); "));
+
+        TreeMap<User, String> usersSortedMap = new TreeMap<>();
+        usersSortedMap.put(new User(1,"Н"), "П");
+        usersSortedMap.put(new User(2,"А"), "Ю");
+        usersSortedMap.put(new User(3,"П"), "Н");
+        System.out.println("\nОтсортированный словарь с ключами-классами:");
+        usersSortedMap.forEach((k,v)->System.out.print("("+k+": "+v+"); "));
+
     }
 }
